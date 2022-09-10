@@ -1,0 +1,51 @@
+﻿@model IEnumerable<KingsCafe.Models.tblOrderPurchaseDetail>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.ORDER_PURCHASE_DETAIL_QUANTITY)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ORDER_PURCHASE_DETAIL_PRICE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ORDER_PURCHASE_FID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.tblIngredient.INGREDIENT_NAME)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.ORDER_PURCHASE_DETAIL_QUANTITY)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ORDER_PURCHASE_DETAIL_PRICE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ORDER_PURCHASE_FID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.tblIngredient.INGREDIENT_NAME)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ORDER_PURCHASE_DETAIL_ID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ORDER_PURCHASE_DETAIL_ID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ORDER_PURCHASE_DETAIL_ID })
+        </td>
+    </tr>
+}
+
+</table>

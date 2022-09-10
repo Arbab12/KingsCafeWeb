@@ -1,0 +1,45 @@
+﻿@using KingsCafe.Models
+
+@{
+
+    dbKingsCafe1 db = new dbKingsCafe1();
+}
+
+
+
+<h2>Ingredientlist</h2>
+
+
+<script>
+    function favingredient() {
+        var mylist = document.getElementById("myList");
+        document.getElementById("favourite").value = mylist.options[mylist.selectedIndex].text;
+    }
+</script>
+
+
+<form>
+    <b> Select you favourite tutorial site using dropdown list </b>
+    <select id="myList" onchange="favTutorial()">
+        <option> ---Choose tutorial--- </option>
+        <option> w3schools </option>
+        <option> Javatpoint </option>
+        <option> tutorialspoint </option>
+        <option> geeksforgeeks </option>
+    </select>
+
+    
+
+
+    <br>
+    <br>
+    <p>
+        Your selected tutorial site is:
+        <input type="text" id="favourite" size="20" />
+    </p>
+</form>
+
+
+
+
+

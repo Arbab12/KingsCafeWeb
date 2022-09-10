@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31424.327
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KingsCafe", "KingsCafe\KingsCafe.csproj", "{C3DF8383-A86E-4547-B1A6-86AD38BC6310}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C3DF8383-A86E-4547-B1A6-86AD38BC6310}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C3DF8383-A86E-4547-B1A6-86AD38BC6310}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C3DF8383-A86E-4547-B1A6-86AD38BC6310}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C3DF8383-A86E-4547-B1A6-86AD38BC6310}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {76442C1F-C14D-42C0-91A1-2C8A8586B010}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,66 @@
+﻿@model KingsCafe.Models.tblWorker
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>tblWorker</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.WORKER_NAME)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.WORKER_NAME)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.WORKER_EMAIL)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.WORKER_EMAIL)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.WORKER_PASSWORD)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.WORKER_PASSWORD)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.WORKER_CONTACT)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.WORKER_CONTACT)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.WORKER_ADDRESS)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.WORKER_ADDRESS)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.WORKER_PICTURES)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.WORKER_PICTURES)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.WORKER_ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

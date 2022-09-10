@@ -1,0 +1,61 @@
+﻿@model IEnumerable<KingsCafe.Models.tblFoodProduct>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2 class="text-center">Manage Product</h2>
+
+<p>
+    <a href="@Url.Action("create","tblFoodProducts")" class="btn btn-primary"> Create product </a>
+
+</p>
+<table class="table">
+    <tr>
+        <th>
+          Category Name 
+        </th>
+        <th>
+          Product Name
+           
+        </th>
+        <th>
+         Product Price
+        </th>
+        <th>
+            Product Picture
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.tblFoodCategory.FOOD_CATEGORY_NAME)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FOOD_PRODUCTS_NAME)
+            
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FOOD_PRODUCTS_PRICE)
+            
+        </td>
+        <td>
+            <img src="@Url.Content(item.FOOD_PRODUCTS_PICTURE)" height="100" width="100"/>
+        </td>
+        <td>
+            <a href="@Url.Action("edit","tblFoodProducts",new { id=item.FOOD_PRODUCTS_ID })" class="btn btn-primary glyphicon glyphicon-edit"></a> |
+            <a href="@Url.Action("details","tblFoodProducts",new { id=item.FOOD_PRODUCTS_ID })" class="btn btn-success glyphicon glyphicon-book"></a> |
+            <a href="@Url.Action("delete","tblFoodProducts",new { id=item.FOOD_PRODUCTS_ID })" class="btn btn-danger glyphicon glyphicon-remove"></a>
+
+
+
+            @*@Html.ActionLink("Edit", "Edit", new { id=item.FOOD_PRODUCTS_ID }) |
+        @Html.ActionLink("Details", "Details", new { id=item.FOOD_PRODUCTS_ID }) |
+        @Html.ActionLink("Delete", "Delete", new { id=item.FOOD_PRODUCTS_ID })*@
+        </td>
+    </tr>
+}
+
+</table>

@@ -1,0 +1,59 @@
+﻿@using KingsCafe.Models
+@{ 
+    var cartingredients = (List<tblIngredient>)Session["purchasecart"];
+}
+
+
+
+@{
+    ViewBag.Title = "Displaycart";
+}
+
+<h2>Displaycart</h2>
+
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.INGREDIENT_NAME)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.INGREDIENT_PRICE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.INGREDIENT_UNIT_PRICE)
+        </th>
+        <th>
+            Quantity
+        </th>
+        <th>
+            Total
+        </th>
+    </tr>
+
+@foreach (var item in cartingredients) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.INGREDIENT_NAME)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.INGREDIENT_PRICE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.INGREDIENT_UNIT_PRICE)
+        </td>
+        <td>
+          
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.INGREDIENT_UNIT_PRICE)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.INGREDIENT_ID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.INGREDIENT_ID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.INGREDIENT_ID })
+        </td>
+    </tr>
+}
+
+</table>

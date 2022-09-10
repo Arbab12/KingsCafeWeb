@@ -1,0 +1,50 @@
+﻿@model IEnumerable<KingsCafe.Models.tblIngredientLinking>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2 class="text-center">Manage Ingredients</h2>
+
+<p>
+    <a href="@Url.Action("create","tblIngredientLinking")" class="btn btn-primary"> Create Ingredient  </a>
+
+</p>
+<table class="table">
+    <tr>
+
+        <th>
+            @Html.DisplayNameFor(model => model.tblFoodProduct.FOOD_PRODUCTS_NAME)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.tblIngredient.INGREDIENT_NAME)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.INGREDIENT_LINKING_QUANTITY)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+<tr>
+
+    <td>
+        @Html.DisplayFor(modelItem => item.tblFoodProduct.FOOD_PRODUCTS_NAME)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.tblIngredient.INGREDIENT_NAME)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.INGREDIENT_LINKING_QUANTITY)
+    </td>
+    <td>
+
+        <a href="@Url.Action("edit","tblIngredientLinking",new { id=item.INGREDIENT_LINKING_ID })" class="btn btn-primary glyphicon glyphicon-edit"></a> |
+        <a href="@Url.Action("details","tblIngredientLinking",new { id=item.INGREDIENT_LINKING_ID })" class="btn btn-success glyphicon glyphicon-book"></a> |
+        <a href="@Url.Action("delete","tblIngredientLinking",new { id=item.INGREDIENT_LINKING_ID })" class="btn btn-danger glyphicon glyphicon-remove"></a>
+
+    </td>
+</tr>
+}
+
+</table>

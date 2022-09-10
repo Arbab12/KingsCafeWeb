@@ -1,0 +1,65 @@
+﻿@model IEnumerable<KingsCafe.Models.tblAdmin>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2 class="text-center">Index Profile </h2>
+
+<p>
+   <a href="@Url.Action("create","tbladmins")" class="btn btn-primary" > Create Admin </a>
+</p>
+<table class="table">
+    <tr>
+        <th>
+         Profile Name
+        </th>
+        <th>
+            Profile Email
+        </th>
+        <th>
+            Profile Password
+        </th>
+        <th>
+            Profile Contact
+        </th>
+        <th>
+            Profile Address
+        </th>
+        <th>
+            Profile Picture
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var p in Model) {
+    <tr>
+        <td>
+            @p.ADMIN_NAME
+        </td>
+        <td>
+            @p.ADMIN_EMAIL
+        </td>
+        <td>
+           @p.ADMIN_PASSWORD
+        </td>
+        <td>
+           @p.ADMIN_CONTACT
+        </td>
+        <td>
+            @p.ADMIN_ADDRESS
+        </td>
+        <td>
+            @p.ADMIN_PICTURE
+        </td>
+        <td>
+            <a href="@Url.Action("edit","tbladmins",new { id=p.ADMIN_ID })"class="btn btn-primary glyphicon glyphicon-edit"></a> |
+            <a href="@Url.Action("details","tbladmins",new { id=p.ADMIN_ID })"class="btn btn-success glyphicon glyphicon-book"></a> |
+            <a href="@Url.Action("delete","tbladmins",new { id=p.ADMIN_ID })"class="btn btn-danger glyphicon glyphicon-remove"></a>
+
+
+ </td>
+    </tr>
+}
+
+</table>

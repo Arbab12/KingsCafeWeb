@@ -1,0 +1,43 @@
+﻿@model KingsCafe.Models.tblFoodCategory
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2 class="text-center">Create</h2>
+
+@using (Html.BeginForm("create", "tblFoodCategories", FormMethod.Post, new { enctype = "multipart/form-data" })) 
+{
+                @Html.AntiForgeryToken()
+
+                <div class="form-horizontal">
+        <h4>tblFoodCategory</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group">
+            @Html.LabelFor(model => model.FOOD_CATEGORY_NAME, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.FOOD_CATEGORY_NAME, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.FOOD_CATEGORY_NAME, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.FOOD_CATEGORY_PICTURE, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                <input name="pic" type="file" required />
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    <a href="@Url.Action("Index","tblFoodCategories") " class="btn btn-primary glyphicon glyphicon-backward"> </a>
+
+</div>

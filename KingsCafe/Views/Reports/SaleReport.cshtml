@@ -1,0 +1,87 @@
+﻿@model IEnumerable<KingsCafe.Models.tblOrder>
+
+@{
+    ViewBag.Title = "NewOrders";
+}
+@Html.Raw(TempData["msg"])
+<h3 class="center"> Sale Report</h3>
+<form action="/Reports/SaleReport" method="post">
+    <table class="table">
+        <tr>
+            <td> <b> From Date: </b> </td>
+            <td><input name="FromDate" class="form-control" value="@ViewBag.DateFrom" type="datetime-local" /></td>
+            <td> <b>To Date:</b> </td>
+            <td><input  name="ToDate" class="form-control" value="@ViewBag.DateTo" type="datetime-local" /></td>
+        </tr>
+        <tr>
+            <td> <b> Select Category </b> </td>
+            <td>
+                @Html.DropDownList("Category", null,"---------------------------Select Category---------------------------" ,htmlAttributes: new { @class = "form-control" })
+            </td>
+            <td> <b> Select Product </b> </td>
+            <td>
+                @Html.DropDownList("Product", null, "----------------------------Select Product---------------------------", htmlAttributes: new { @class = "form-control" })
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input type="submit" class="btn btn-block btn-success" value="Generate" />
+            </td>
+        </tr>
+    </table>
+</form>
+<table class="table table-bordered">
+    <tr>
+        <th>
+          Order ID
+        </th>
+        <th>
+          Order Customer Name
+        </th>
+        <th>
+           Order Customer Address
+        </th>
+        <th>
+            Order Customer Contact
+        </th>
+       
+        <th>
+            Order Status
+        </th>
+        <th>
+           Order Date
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.ORDER_ID)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.ORDER_CUSTOMER_NAME)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.ORDER_CUSTOMER_ADDRESS)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.ORDER_CUSTOMER_CONTACT)
+    </td>
+
+    <td>
+        @Html.DisplayFor(modelItem => item.ORDER_STATUS)
+    </td>
+    <td>
+        @item.ORDER_DATE.ToLongDateString()
+    </td>
+    <td>
+        <a href="@Url.Action("Invoice","Adminside", new { id= item.ORDER_ID })" class="btn btn-primary">Invoice</a>
+    </td>
+    @*<td>
+        <a href="@Url.Action("SaleReport","Reports")" class="btn btn-primary">Back to list</a>
+    </td>*@
+</tr>
+}
+    
+</table>

@@ -1,0 +1,41 @@
+﻿@model IEnumerable<KingsCafe.Models.tblFoodCategory>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2 class="text-center">Manage Food categories</h2>
+
+<p>
+    <a href="@Url.Action("create","tblFoodCategories")" class="btn btn-primary"> Create Food Category </a>
+
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.FOOD_CATEGORY_NAME)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FOOD_CATEGORY_PICTURE)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.FOOD_CATEGORY_NAME)
+        </td>
+        <td>
+            <img src="@Url.Content(item.FOOD_CATEGORY_PICTURE)" height="100" width="100" />
+        </td>
+        <td>
+            <a href="@Url.Action("edit","tblFoodCategories",new { id=item.FOOD_CATEGORY_ID })" class="btn btn-primary glyphicon glyphicon-edit"></a> |
+            <a href="@Url.Action("details","tblFoodCategories",new { id=item.FOOD_CATEGORY_ID })" class="btn btn-success glyphicon glyphicon-book"></a> |
+            <a href="@Url.Action("delete","tblFoodCategories",new { id=item.FOOD_CATEGORY_ID })" class="btn btn-danger glyphicon glyphicon-remove"></a>
+
+        </td>
+    </tr>
+}
+
+</table>

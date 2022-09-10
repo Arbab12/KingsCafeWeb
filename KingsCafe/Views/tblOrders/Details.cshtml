@@ -1,0 +1,66 @@
+﻿@model KingsCafe.Models.tblOrder
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>tblOrder</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.ORDER_CUSTOMER_NAME)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ORDER_CUSTOMER_NAME)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ORDER_CUSTOMER_ADDRESS)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ORDER_CUSTOMER_ADDRESS)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ORDER_CUSTOMER_CONTACT)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ORDER_CUSTOMER_CONTACT)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CUSTOMER_FID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CUSTOMER_FID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ORDER_STATUS)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ORDER_STATUS)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ORDER_DATE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ORDER_DATE)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ORDER_ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

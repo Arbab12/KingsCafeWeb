@@ -1,0 +1,9 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@model List<KingsCafe.Models.tblIngredientLinking>
+@foreach (var item in Model)
+{
+<option value=""> Select </option>
+<option value="@item.@item.INGREDIENT_NAME</option>
+}

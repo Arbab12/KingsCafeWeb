@@ -1,0 +1,38 @@
+﻿@model KingsCafe.Models.tblFoodCategory
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2 class="text-center">Details</h2>
+
+<div>
+    <h4>tblFoodCategory</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.FOOD_CATEGORY_NAME)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FOOD_CATEGORY_NAME)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FOOD_CATEGORY_PICTURE)
+        </dt>
+
+        <dd>
+            <img src="@Url.Content(Model.FOOD_CATEGORY_PICTURE)" height="100" width="100" />
+        </dd>
+
+    </dl>
+</div>
+<p>
+    <a href="@Url.Action("Edit","tblFoodCategories" , new { id=Model.FOOD_CATEGORY_ID })" class="btn btn-primary glyphicon glyphicon-edit"> </a>
+    <a href="@Url.Action("Index","tblFoodCategories" , new { id=Model.FOOD_CATEGORY_ID })" class="btn btn-primary glyphicon glyphicon-backward"> </a>
+
+
+    @*@Html.ActionLink("Edit", "Edit", new { id = Model.FOOD_CATEGORY_ID }) |
+        @Html.ActionLink("Back to List", "Index")*@
+</p>

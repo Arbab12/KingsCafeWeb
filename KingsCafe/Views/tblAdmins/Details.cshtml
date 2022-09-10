@@ -1,0 +1,68 @@
+﻿@model KingsCafe.Models.tblAdmin
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2 class="text-center">Details</h2>
+
+<div>
+    <h4>tblAdmin</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.ADMIN_NAME)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ADMIN_NAME)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ADMIN_EMAIL)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ADMIN_EMAIL)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ADMIN_PASSWORD)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ADMIN_PASSWORD)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ADMIN_CONTACT)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ADMIN_CONTACT)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ADMIN_ADDRESS)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ADMIN_ADDRESS)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ADMIN_PICTURE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ADMIN_PICTURE)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    <a href="@Url.Action("Edit","tblAdmins" , new { id=Model.ADMIN_ID })" class="btn btn-primary glyphicon glyphicon-edit"> </a>
+    <a href="@Url.Action("Index","tblAdmins" , new { id=Model.ADMIN_ID })" class="btn btn-primary glyphicon glyphicon-backward"> </a>
+
+
+</p>

@@ -1,0 +1,53 @@
+﻿@model KingsCafe.Models.tblFoodProduct
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2 class="text-center">Details</h2>
+
+<div>
+    <h4>tblFoodProduct</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.FOOD_PRODUCTS_NAME)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FOOD_PRODUCTS_NAME)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FOOD_PRODUCTS_PRICE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FOOD_PRODUCTS_PRICE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FOOD_PRODUCTS_PICTURE)
+        </dt>
+
+        <dd>
+            <img src="@Url.Content(Model.FOOD_PRODUCTS_PICTURE)" height="100" width="100" />
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.tblFoodCategory.FOOD_CATEGORY_NAME)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tblFoodCategory.FOOD_CATEGORY_NAME)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    <a href="@Url.Action("Edit","tblFoodProducts" , new { id=Model.FOOD_PRODUCTS_ID })" class="btn btn-primary glyphicon glyphicon-edit"> </a>
+    <a href="@Url.Action("Index","tblFoodProducts" , new { id=Model.FOOD_PRODUCTS_ID })" class="btn btn-primary glyphicon glyphicon-backward"> </a>
+
+
+    
+</p>

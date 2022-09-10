@@ -1,0 +1,72 @@
+﻿@model KingsCafe.Models.tblWorker
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>tblWorker</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.WORKER_NAME)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.WORKER_NAME)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.WORKER_EMAIL)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.WORKER_EMAIL)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.WORKER_PASSWORD)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.WORKER_PASSWORD)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.WORKER_CONTACT)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.WORKER_CONTACT)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.WORKER_ADDRESS)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.WORKER_ADDRESS)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.WORKER_PICTURES)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.WORKER_PICTURES)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

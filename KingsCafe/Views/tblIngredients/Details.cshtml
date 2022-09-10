@@ -1,0 +1,48 @@
+﻿@model KingsCafe.Models.tblIngredient
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2 class="text-center">Details</h2>
+
+
+<div>
+    <h4>tblIngredient</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.INGREDIENT_NAME)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.INGREDIENT_NAME)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.INGREDIENT_PRICE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.INGREDIENT_PRICE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.INGREDIENT_UNIT_PRICE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.INGREDIENT_UNIT_PRICE)
+        </dd>
+
+    </dl>
+</div>
+<p>
+
+    <a href="@Url.Action("Edit","tblIngredients" , new { id=Model.INGREDIENT_ID })" class="btn btn-primary glyphicon glyphicon-edit"> </a>
+    <a href="@Url.Action("Index","tblIngredients" , new { id=Model.INGREDIENT_ID })" class="btn btn-primary glyphicon glyphicon-backward"> </a>
+
+
+    @*@Html.ActionLink("Edit", "Edit", new { id = Model.INGREDIENT_ID }) |
+        @Html.ActionLink("Back to List", "Index")*@
+</p>

@@ -1,0 +1,66 @@
+﻿@model KingsCafe.Models.tblFoodProduct
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2 class="text-center">Edit</h2>
+
+@using (Html.BeginForm("edit", "tblfoodproducts", FormMethod.Post, new {enctype= "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        <h4>tblFoodProduct</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        @Html.HiddenFor(model => model.FOOD_PRODUCTS_ID)
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.FOOD_PRODUCTS_NAME, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.FOOD_PRODUCTS_NAME, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.FOOD_PRODUCTS_NAME, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.FOOD_PRODUCTS_PRICE, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.FOOD_PRODUCTS_PRICE, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.FOOD_PRODUCTS_PRICE, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.FOOD_PRODUCTS_PICTURE, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                <input type="file" name="pic" />
+                <img src="@Url.Content(Model.FOOD_PRODUCTS_PICTURE)" height="100" width="100" />
+                
+                @Html.HiddenFor(model => model.FOOD_PRODUCTS_PICTURE)
+                @Html.EditorFor(model => model.FOOD_PRODUCTS_PICTURE, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.FOOD_PRODUCTS_PICTURE, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.FOOD_CATEGORY_FID, "FOOD_CATEGORY_FID", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownList("FOOD_CATEGORY_FID", null, htmlAttributes: new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.FOOD_CATEGORY_FID, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Save" class="btn btn-success" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    <a href="@Url.Action("Index","tblFoodProducts" , new { id=Model.FOOD_PRODUCTS_ID })" class="btn btn-primary glyphicon glyphicon-backward"> </a>
+
+</div>
